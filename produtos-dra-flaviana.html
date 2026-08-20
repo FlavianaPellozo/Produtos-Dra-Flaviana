@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produtos — Dra. Flaviana Pellozo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&amp;family=Parisienne&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>
+@font-face{
+  font-family:'Regiola Serif';
+  src:url(assets/fonts/font-c5585ff73cdb.ttf) format('truetype');
+  font-weight:400;
+  font-display:swap;
+}
+:root{
+  --c1:#C1B0A1;
+  --c2:#746A61;
+  --c3:#D1BFB2;
+  --c4:#F4EEE9;
+  --gold-1:#EBBB7A;
+  --gold-2:#C9944F;
+  --gold-3:#8F6A3D;
+  --serif:'Regiola Serif','Playfair Display',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{overflow-x:clip;scroll-behavior:smooth;}
+body{position:relative;font-family:var(--sans);font-weight:300;background:var(--c4);color:var(--c2);overflow-x:clip;cursor:none;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;border:none;background:none;cursor:none;}
+@media(max-width:900px){body{cursor:auto;} button,a{cursor:pointer;}}
+
+#cur{position:fixed;width:7px;height:7px;background:var(--gold-3);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
+#cur-r{position:fixed;width:34px;height:34px;border:1px solid var(--gold-2);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.5;transition:width .3s,height .3s,opacity .3s;}
+@media(max-width:900px){#cur,#cur-r{display:none;}}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 6vw;}
+.section{padding:120px 0;}
+@media(max-width:900px){.section{padding:74px 0;}}
+.eyebrow{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-3);font-weight:500;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;color:var(--c2);}
+p{line-height:1.85;color:var(--c2);opacity:.88;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 6vw;transition:all .5s var(--ease);}
+nav.s{background:rgba(244,238,233,.92);backdrop-filter:blur(14px);padding:1rem 6vw;box-shadow:0 1px 0 rgba(193,176,161,.14);}
+.nav-logo{position:relative;height:34px;width:150px;display:block;}
+.nav-logo img{position:absolute;top:0;left:0;height:34px;width:auto;max-width:150px;object-fit:contain;object-position:left center;transition:opacity .4s;}
+.nav-logo .lw{opacity:1;}
+.nav-logo .lr{opacity:0;}
+nav.s .nav-logo .lw{opacity:0;}
+nav.s .nav-logo .lr{opacity:1;}
+.nav-back{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:.5rem;transition:color .4s;}
+nav.s .nav-back{color:var(--c1);}
+.nav-book{font-size:.54rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:.5rem 1.15rem;border-radius:999px;border:1px solid rgba(255,255,255,.7);color:#fff;background:transparent;transition:all .35s;}
+nav.s .nav-book{border-color:var(--c1);color:var(--c1);}
+.nav-book:hover{background:rgba(255,255,255,.15);}
+nav.s .nav-book:hover{background:rgba(193,176,161,.1);}
+
+/* page hero */
+.phero{position:relative;height:82vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;}
+.phero__img{width:100%;height:100%;object-fit:cover;object-position:center 15%;position:absolute;inset:0;}
+.phero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(193,176,161,.14) 0%,rgba(193,176,161,.20) 30%,rgba(90,79,68,.86) 100%);opacity:1;}
+.phero__content{position:relative;z-index:1;text-align:center;color:#fff;max-width:680px;padding:0 6vw;margin-bottom:7vh;}
+.phero__content .eyebrow{color:#fff;opacity:1;text-shadow:0 2px 12px rgba(0,0,0,.25);}
+.phero__content h1{color:#fff;font-size:clamp(1.8rem,4vw,2.9rem);margin:1rem 0 1.1rem;opacity:1;text-shadow:0 2px 20px rgba(0,0,0,.22);}
+.phero__content p{color:rgba(255,255,255,.86);font-size:.9rem;max-width:62ch;margin:0 auto;opacity:1;text-shadow:0 2px 12px rgba(0,0,0,.2);}
+.phero__logo{height:40px;width:auto;margin:1.6rem auto 0;filter:brightness(0) invert(1);opacity:1;}
+
+/* intro banner */
+.intro{background-image:linear-gradient(rgba(244,238,233,.93),rgba(244,238,233,.93)),url('assets/img/img-67eaf2fbbf34.webp');background-size:cover,420px auto;background-repeat:no-repeat,repeat;background-position:center,center;text-align:center;padding:150px 0 110px;}
+.intro__title{font-size:clamp(2.1rem,5vw,3.6rem);color:var(--c2);}
+.intro__sub{margin-top:1.1rem;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--c1);font-family:var(--sans);}
+.intro__icon{width:38px;height:49px;margin:3.4rem auto 0;display:block;animation:bob 2.2s ease-in-out infinite;background-color:var(--c2);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(9px);}}
+
+/* category sections */
+.cat{position:relative;}
+.cat--light{background:var(--c3);}
+.cat--dark{background:#d1bfb2;}
+.cat--light2{background:var(--c4);}
+
+/* category quick-nav (scroll dock) */
+.catdock{position:fixed;top:50%;right:26px;transform:translateY(-50%);z-index:400;display:flex;flex-direction:column;gap:.7rem;opacity:0;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease);}
+.catdock.is-visible{opacity:1;pointer-events:auto;}
+.catdock__btn{display:flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.56rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--c2);background:rgba(244,238,233,.85);backdrop-filter:blur(10px);border:1px solid rgba(193,176,161,.35);padding:.55rem .9rem .55rem .6rem;border-radius:999px;box-shadow:0 6px 18px rgba(90,79,68,.1);transition:all .35s var(--ease);white-space:nowrap;}
+.catdock__dot{width:7px;height:7px;border-radius:50%;background:var(--gold-2);flex:0 0 auto;transition:all .35s var(--ease);}
+.catdock__btn:hover{border-color:var(--gold-2);color:var(--gold-3);}
+.catdock__btn.is-active{background:linear-gradient(135deg,var(--gold-1) 0%,var(--gold-2) 55%,var(--gold-3) 100%);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(143,106,61,.32);}
+.catdock__btn.is-active .catdock__dot{background:#fff;}
+.catdock__label{max-width:0;overflow:hidden;opacity:0;transition:max-width .35s var(--ease),opacity .3s var(--ease);}
+.catdock__btn:hover .catdock__label,.catdock__btn.is-active .catdock__label{max-width:140px;opacity:1;}
+@media(max-width:900px){
+  .catdock{top:auto;bottom:18px;right:50%;transform:translateX(50%);flex-direction:row;gap:.5rem;}
+  .catdock.is-visible{transform:translateX(50%);}
+  .catdock__btn{padding:.5rem .55rem;background:rgba(244,238,233,.94);}
+  .catdock__label{max-width:0;}
+  .catdock__btn.is-active .catdock__label{max-width:120px;}
+}
+.cat--dark h2,.cat--dark h3,.cat--dark .eyebrow{color:#fff;}
+.cat--dark p{color:rgba(255,255,255,.85);}
+.cat--dark .svc-row__price{color:#fff;}
+.cat--dark .plist__row .name{color:#fff;}
+.cat--dark .plist__row{border-bottom-color:rgba(255,255,255,.22);}
+.cat--dark .plist__group-title{color:#fff;}
+.cat--dark .plist__row .sub{color:rgba(255,255,255,.7);}
+.cat--dark .deposit-note{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.85);}
+.cat--dark .proc-fact .l{color:rgba(255,255,255,.68);}
+.cat--dark .proc-fact .v{color:#fff;}
+.cat--dark .proc-facts{border-color:rgba(255,255,255,.25);}
+.cat--dark .proc-price{border-color:rgba(255,255,255,.5);background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.06));}
+.cat--dark .proc-price__label{color:rgba(255,255,255,.68);}
+.cat--dark .proc-price__value{color:#fff;}
+.cat--dark .proc-price__cash{color:rgba(255,255,255,.68);}
+.cat__head{max-width:640px;margin:0 auto 3rem;text-align:center;}
+.cat__head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-top:.8rem;}
+.cat__head p{font-size:.9rem;margin-top:1rem;}
+
+.svc-row{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center;padding:2.4rem 1.2rem;border-bottom:1px solid rgba(193,176,161,.2);border-radius:8px;transition:box-shadow .4s,transform .4s;}
+.svc-row:hover{box-shadow:0 20px 46px rgba(193,176,161,.14);transform:translateY(-3px);}
+.cat--dark .svc-row{border-bottom-color:rgba(255,255,255,.16);}
+.svc-row:nth-child(even){direction:rtl;}
+.svc-row:nth-child(even) > *{direction:ltr;}
+@media(max-width:800px){.svc-row{grid-template-columns:1fr;gap:1.3rem;}.svc-row:nth-child(even){direction:ltr;}}
+.svc-row__img{aspect-ratio:4/3;overflow:hidden;border-radius:6px;}
+.svc-row__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.svc-row:hover .svc-row__img img{transform:scale(1.07);}
+.svc-row__title{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.7rem;}
+.svc-row__title h3{font-size:1.4rem;}
+.svc-row__price{font-family:var(--serif);font-style:italic;color:var(--c2);font-size:1rem;white-space:nowrap;}
+.svc-row p{font-size:.87rem;}
+
+/* product cards - same mechanic as procedure cards in original template */
+.proc{padding:90px 0;overflow:hidden;}
+.proc-card{display:grid;grid-template-columns:1.05fr .95fr;gap:3.6rem;align-items:center;}
+.proc-card--rev{direction:rtl;}
+.proc-card--rev > *{direction:ltr;}
+@media(max-width:860px){.proc-card,.proc-card--rev{grid-template-columns:1fr;direction:ltr;gap:2rem;}}
+.proc-card__media{border-radius:10px;overflow:hidden;box-shadow:0 30px 60px rgba(193,176,161,.18);transition:transform .5s var(--ease),box-shadow .5s;}
+.proc-card:hover .proc-card__media{transform:translateY(-6px);box-shadow:0 40px 76px rgba(193,176,161,.26);}
+.proc-single{overflow:hidden;border-radius:10px;background:rgba(193,176,161,.06);}
+.proc-single img{width:100%;height:auto;display:block;object-fit:contain;transition:transform 2.4s var(--ease);}
+.proc-card:hover .proc-single img{transform:scale(1.09);}
+.proc-card__body h3{font-size:1.8rem;margin:.7rem 0 1rem;}
+.proc-card__body p{font-size:.92rem;margin-bottom:1.6rem;}
+.proc-facts{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.6rem;padding:1.4rem 0;border-top:1px solid rgba(193,176,161,.25);border-bottom:1px solid rgba(193,176,161,.25);margin-bottom:1.6rem;}
+.proc-fact{display:flex;flex-direction:column;gap:.2rem;}
+.proc-fact .l{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c1);}
+.proc-fact .v{font-family:var(--serif);font-size:.98rem;color:var(--c2);}
+.proc-price{display:flex;flex-direction:column;gap:.2rem;margin-bottom:1.8rem;padding:1.1rem 1.4rem;border:1px solid var(--gold-2);border-radius:6px;background:linear-gradient(135deg,rgba(232,180,160,.14),rgba(140,90,70,.07));max-width:260px;}
+.proc-price__label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-3);}
+.proc-price__value{font-family:var(--serif);font-size:1.6rem;color:var(--c2);}
+.proc-price__old{font-size:.72rem;text-decoration:line-through;opacity:.6;margin-right:.4rem;}
+.proc-price__cash{display:block;font-size:.72rem;font-family:var(--sans);color:var(--gold-3);margin-top:.2rem;font-style:normal;}
+
+/* magnetic + ripple buttons */
+.magnetic{position:relative;overflow:hidden;}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rippleAnim .6s ease-out;pointer-events:none;}
+@keyframes rippleAnim{to{transform:scale(2.6);opacity:0;}}
+
+/* word reveal headings */
+.word-reveal .wd{display:inline-block;opacity:0;transform:translateY(14px);}
+
+.plist{max-width:740px;margin:3rem auto 0;display:flex;flex-direction:column;gap:0;}
+.plist__row{display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;border-bottom:1px solid rgba(193,176,161,.22);gap:1rem;}
+.plist__row .name{font-size:.92rem;font-family:var(--serif);color:var(--c2);}
+.plist__row .sub{display:block;font-size:.72rem;color:var(--c2);opacity:.75;font-family:var(--sans);margin-top:.15rem;}
+.plist__row .price{font-family:var(--serif);font-style:italic;color:var(--gold-3);white-space:nowrap;}
+.cat--dark .plist__row .price{color:var(--gold-1);}
+.plist__group-title{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c1);margin:2rem 0 .5rem;}
+.cat--dark .plist__group-title{color:var(--gold-1);}
+.plist__group-title:first-child{margin-top:0;}
+
+.deposit-note{max-width:640px;margin:2.6rem auto 0;text-align:center;font-size:.78rem;color:var(--c2);padding:1.2rem 1.4rem;border:1px solid rgba(193,176,161,.3);border-radius:6px;}
+
+/* faq */
+.faq{background:var(--c3);color:var(--c2);}
+.faq .wrap{max-width:780px;}
+.faq .eyebrow{color:var(--gold-1);}
+.faq .cat__head h2{color:var(--c2);}
+.faq__item{border-bottom:1px solid rgba(116,106,97,.2);}
+.faq__q{width:100%;text-align:left;padding:1.4rem 0;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-weight:400;font-size:1rem;color:var(--c2);}
+.faq__q .icon{position:relative;width:15px;height:15px;flex:none;margin-left:1.2rem;}
+.faq__q .icon::before,.faq__q .icon::after{content:'';position:absolute;background:var(--gold-3);transition:transform .35s ease;}
+.faq__q .icon::before{top:50%;left:0;width:100%;height:1px;transform:translateY(-50%);}
+.faq__q .icon::after{left:50%;top:0;width:1px;height:100%;transform:translateX(-50%);}
+.faq__item.open .faq__q .icon::after{transform:translateX(-50%) rotate(90deg);opacity:0;}
+.faq__a{max-height:0;overflow:hidden;transition:max-height .5s ease;}
+.faq__a p{padding:0 0 1.5rem;font-size:.85rem;max-width:64ch;color:rgba(116,106,97,.85);}
+
+/* testimonials */
+.testi{background:var(--c4);}
+.testi__track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;scrollbar-width:none;}
+.testi__track::-webkit-scrollbar{display:none;}
+.testi__card{min-width:290px;scroll-snap-align:start;background:linear-gradient(135deg,rgba(199,154,147,.28),rgba(116,106,97,.16));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.5);padding:1.7rem;display:flex;flex-direction:column;gap:.85rem;border-radius:10px;transition:transform .4s var(--ease),box-shadow .4s;}
+.testi__card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(193,176,161,.22);}
+.testi__stars{color:var(--gold-3);letter-spacing:.15em;font-size:.82rem;}
+.testi__quote{font-family:var(--sans);font-weight:300;font-size:.9rem;line-height:1.75;color:var(--c2);}
+.testi__name{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c1);}
+
+/* final cta */
+.final{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;}
+.final__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;transform:scale(1.08);}
+.final__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(193,176,161,.16) 0%,rgba(116,106,97,.55) 45%,rgba(90,79,68,.9) 100%);opacity:1;}
+.final__content{position:relative;z-index:1;padding:80px 6vw;}
+.final .eyebrow{color:var(--gold-1);opacity:.95;}
+.final__divider{width:46px;height:1px;background:linear-gradient(90deg,var(--gold-1),var(--gold-3));margin:1.2rem auto 1.6rem;}
+.final h2{color:#fff;font-style:normal;font-weight:400;font-size:clamp(1.6rem,3.4vw,2.5rem);max-width:22ch;margin:0 auto 2.2rem;}
+.final__ctas{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:.85rem 1.8rem;border-radius:999px;transition:all .4s var(--ease);}
+.btn-gold{background:linear-gradient(135deg,var(--gold-1) 0%,var(--gold-2) 55%,var(--gold-3) 100%);color:#fff;box-shadow:0 8px 22px rgba(143,106,61,.3);}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(143,106,61,.4);}
+.btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff;}
+.btn-outline:hover{background:rgba(255,255,255,.15);}
+
+footer{background:var(--c4);color:var(--c2);padding:4rem 0 2rem;border-top:1px solid rgba(193,176,161,.25);}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.4rem;margin-bottom:2.6rem;}
+.foot-logo{height:32px;margin-bottom:1rem;}
+.foot-grid p{font-size:.8rem;color:var(--c2);opacity:.85;max-width:32ch;}
+.foot-col h4{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--c1);opacity:.95;margin-bottom:1rem;}
+.foot-col a{display:block;font-size:.86rem;color:var(--c2);margin-bottom:.6rem;}
+.foot-bottom{border-top:1px solid rgba(193,176,161,.25);padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.66rem;color:var(--c2);opacity:.75;}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;}}
+
+.sect-transition{height:2px;max-width:220px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--gold-2),transparent);background-size:200% 100%;animation:shimmer 3.2s linear infinite;opacity:1;transform:scaleX(1);}
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+.reveal{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;}}
+
+/* smart whatsapp card - CSS-only (no JS dependency): position:sticky makes it
+   appear naturally the moment the FAQ zone scrolls into view, follow the
+   scroll, and stop on its own right before the footer/logo (zone ends there). */
+/* smart whatsapp card - plain vanilla JS (no external lib needed), no CSS
+   sticky trick: it is position:fixed (follows scroll) while inside the
+   FAQ->Final range, then switches to position:absolute pinned right above
+   the footer once it gets there, so it visually "stops" instead of
+   overlapping the footer/logo. */
+.smartfab{position:fixed;left:50%;bottom:1.6rem;transform:translateX(-50%);z-index:600;max-width:380px;width:90%;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.smartfab.is-visible{opacity:1;pointer-events:auto;}
+.smartfab.is-stopped{position:absolute;bottom:auto;}
+.smartfab__card{background:linear-gradient(160deg,rgba(244,238,233,.94),rgba(209,191,178,.9));color:var(--c2);border-radius:16px;padding:1.6rem 1.7rem;box-shadow:0 20px 50px rgba(193,176,161,.35);backdrop-filter:blur(8px);}
+.smartfab__card h4{font-family:var(--serif);font-weight:400;color:var(--c2);font-size:1.05rem;margin-bottom:.5rem;}
+.smartfab__card p{font-size:.76rem;color:rgba(116,106,97,.9);margin-bottom:1rem;}
+.smartfab__card .row{display:flex;gap:.6rem;flex-wrap:wrap;}
+.smartfab__card .btn{padding:.7rem 1.2rem;font-size:.58rem;}
+.smartfab__card .btn-gold{background:var(--c2);color:#fff;box-shadow:none;}
+.smartfab__card .btn-outline{border:1px solid var(--c2);color:var(--c2);}
+@media(max-width:520px){.smartfab{width:88%;bottom:1rem;}}
+
+/* assinatura Edhen */
+.made-by{text-align:center;padding:1.5rem 0 1.9rem;background-image:linear-gradient(rgba(244,238,233,.92),rgba(244,238,233,.92)),url('assets/img/img-67eaf2fbbf34.webp');background-size:cover,280px auto;background-repeat:no-repeat,repeat;background-position:center,center;}
+.made-by span{font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--c1);display:block;margin-bottom:.6rem;}
+.made-by .edhen-mark{width:96px;height:50px;margin:0 auto;background-color:var(--c2);opacity:.85;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center center;mask-position:center center;}
+.made-by .edhen-handle{display:block;margin-top:.5rem;font-size:.55rem;letter-spacing:.04em;color:var(--c2);opacity:.7;text-transform:none;}
+
+/* ===== ENVELOPE GATE (tela de abertura) ===== */
+#envelopeGate{position:fixed;inset:0;z-index:99999;background:#0c0a08;overflow:hidden;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:opacity .9s ease;}
+#envelopeGate.is-hidden{display:none;}
+#envelopeGate .envelope-img-wrap{position:absolute;inset:0;overflow:hidden;}
+#envelopeGate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+  transform:scale(1);transform-origin:50% 50%;will-change:transform;}
+#envelopeGate .envelope-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;}
+#envelopeGate .envelope-hint{position:absolute;bottom:9%;left:50%;transform:translateX(-50%);z-index:2;
+  color:#fff;font-family:'Jost',sans-serif;letter-spacing:.32em;text-transform:uppercase;
+  font-size:.7rem;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.55);
+  animation:envelopeHint 2.2s ease-in-out infinite;pointer-events:none;}
+#envelopeGate .envelope-hint span{display:block;font-family:'Parisienne',cursive;font-size:1.5rem;
+  letter-spacing:.02em;text-transform:none;margin-bottom:.4rem;color:var(--c1,#c9a24b);}
+@keyframes envelopeHint{0%,100%{opacity:.55;transform:translateX(-50%) translateY(0);}50%{opacity:1;transform:translateX(-50%) translateY(-4px);}}
+body.gate-locked{overflow:hidden;height:100vh;}
+@media(max-width:600px){
+  #envelopeGate .envelope-hint{font-size:.62rem;}
+  #envelopeGate .envelope-hint span{font-size:1.25rem;}
+}
+</style>
+</head>
+<body class="gate-locked">
+<!-- ===== ENVELOPE GATE (abertura da pagina) ===== -->
+<div id="envelopeGate" role="button" tabindex="0" aria-label="Clique para abrir o convite">
+  <div class="envelope-img-wrap">
+    <img id="envelopeImg" src="assets/img/envelopeImg-9fbc75e13fae.jpg" alt="Envelope convite Dra. Flaviana Pellozo">
+  </div>
+  <div class="envelope-flash"></div>
+  <div class="envelope-hint">Toque para abrir</div>
+</div>
+<script>
+/* rede de seguranca: garante que o conteudo apareca mesmo se o script de
+   animacao (GSAP/Lenis) falhar ao carregar por qualquer motivo */
+setTimeout(function(){
+  document.querySelectorAll('.reveal').forEach(function(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+  ['pheroTitle','pheroEyebrow','pheroSub','pheroLogo','heroTitle','heroEyebrow','heroSub','pheroOverlay','heroOverlay','finalOverlay'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.style.opacity = '1';
+  });
+  document.querySelectorAll('.wd').forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; });
+}, 2000);
+</script>
+
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img class="lw" src="assets/img/nav-c732f55d6663.webp" alt="Flaviana Pellozo — Harmonização Orofacial"><div class="lr" role="img" aria-label="Flaviana Pellozo" style="position:absolute;top:0;left:0;height:34px;width:150px;transition:opacity .4s;-webkit-mask-image:url('assets/img/img-a0b9c88acfb0.webp');mask-image:url('assets/img/img-a0b9c88acfb0.webp');-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:left center;mask-position:left center;background-color:var(--c2);"></div></a>
+  <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20produtos%20da%20Dra.%20Flaviana." target="_blank" rel="noopener" class="nav-book">Comprar</a>
+</nav>
+
+<!-- category quick-nav: appears while scrolling through the product categories -->
+<div class="catdock" id="catDock">
+  <button type="button" class="catdock__btn" data-cat="cat-gloss"><span class="catdock__dot"></span><span class="catdock__label">Gloss Labial</span></button>
+  <button type="button" class="catdock__btn" data-cat="cat-protecao"><span class="catdock__dot"></span><span class="catdock__label">Proteção Solar</span></button>
+  <button type="button" class="catdock__btn" data-cat="cat-skincare"><span class="catdock__dot"></span><span class="catdock__label">Skin Care</span></button>
+</div>
+
+<section class="phero">
+  <img class="phero__img" id="pheroImg" src="assets/img/pheroImg-3666341bc101.webp" alt="Dra. Flaviana Pellozo">
+  <div class="phero__overlay" id="pheroOverlay"></div>
+  <div class="phero__content">
+    <span class="eyebrow" id="pheroEyebrow">Produtos</span>
+    <h1 id="pheroTitle">O cuidado que continua<br>depois do consultório.</h1>
+    <p id="pheroSub">Uma curadoria de skincare, proteção solar e gloss labial pensada para prolongar e potencializar os resultados da sua harmonização orofacial.</p>
+    <img class="phero__logo" id="pheroLogo" src="assets/img/pheroLogo-d53b60928bff.webp" alt="Dra. Flaviana Pellozo">
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <h2 class="intro__title reveal word-reveal">Produtos Dra. Flaviana Pellozo</h2>
+    <div class="intro__sub reveal">Skincare &bull; Proteção Solar &bull; Beleza dos Lábios</div>
+    <div class="intro__icon reveal" role="img" aria-label="Dra. Flaviana Pellozo" style="-webkit-mask-image:url('assets/img/heroScroll-0366f261ceaa.webp');mask-image:url('assets/img/heroScroll-0366f261ceaa.webp');"></div>
+  </div>
+</section>
+
+<div class="sect-transition reveal"></div>
+<!-- GLOSS LABIAL -->
+<section class="cat cat--light" id="cat-gloss" style="padding:90px 0 40px;">
+  <div class="wrap cat__head">
+    <span class="eyebrow reveal">Gloss Labial</span>
+    <h2 class="reveal word-reveal">Brilho, hidratação e volume para o seu sorriso</h2>
+  </div>
+</section>
+
+<!-- PROC CARD: GLOSS DIOR FP -->
+<section class="proc cat--light">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-fcaa0c433b92.jpg" alt="Gloss Dior FP — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 01</span>
+        <h3>Gloss Dior FP</h3>
+        <p>Sérum labial hidratante de alto brilho, formulado com ácido hialurônico e vitamina E. Além de iluminar os lábios com um acabamento super brilhante, ajuda a manter a pele labial hidratada e protegida ao longo do dia.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Ativos</span><span class="v">Ácido Hialurônico + Vit. E</span></div>
+          <div class="proc-fact"><span class="l">Efeito</span><span class="v">Super brilho</span></div>
+          <div class="proc-fact"><span class="l">Indicado para</span><span class="v">Hidratação diária</span></div>
+          <div class="proc-fact"><span class="l">Volume</span><span class="v">8ml</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 95,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Gloss%20Dior%20FP." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: GLOSS PINGENTE FP -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card proc-card--rev reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-c7af1de27f62.webp" alt="Gloss Pingente FP — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 02</span>
+        <h3>Gloss Pingente FP</h3>
+        <p>Gloss Shine Hyaluronic em versão colecionável, com pingente exclusivo. Dermatologicamente testado, oferece hidratação e brilho intenso de longa duração — o acessório perfeito para levar na bolsa.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Ativo</span><span class="v">Ácido Hialurônico</span></div>
+          <div class="proc-fact"><span class="l">Efeito</span><span class="v">Brilho intenso</span></div>
+          <div class="proc-fact"><span class="l">Testagem</span><span class="v">Dermatologicamente testado</span></div>
+          <div class="proc-fact"><span class="l">Durabilidade</span><span class="v">Longa duração</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 85,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Gloss%20Pingente%20FP." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: GLOSS FP 5 SABORES -->
+<section class="proc cat--light">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-c6b76f62fcd8.jpg" alt="Gloss FP — coleção de sabores">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 03</span>
+        <h3>Gloss FP — Coleção de Sabores</h3>
+        <p>Gloss labial à base de 5 tipos de ácido hialurônico e ceramidas, com efeito Pump que deixa os lábios visivelmente mais volumosos. Prolonga a durabilidade de preenchimentos labiais e mantém a hidratação contínua ao longo do dia.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Ativos</span><span class="v">5 Ácidos Hialurônicos + Ceramidas</span></div>
+          <div class="proc-fact"><span class="l">Efeito</span><span class="v">Pump — mais volume</span></div>
+          <div class="proc-fact"><span class="l">Sabores</span><span class="v">Chiclete, Cereja, Framboesa, Morango</span></div>
+          <div class="proc-fact"><span class="l">Benefício extra</span><span class="v">Aumenta durabilidade do preenchimento</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 75,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Gloss%20FP%20(escolher%20sabor)." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sect-transition reveal"></div>
+<!-- SKINCARE INTRO -->
+<section class="cat cat--light2 section" id="cat-protecao" style="padding:90px 0 40px;">
+  <div class="wrap cat__head">
+    <span class="eyebrow reveal">Skincare &amp; Proteção Solar</span>
+    <h2 class="reveal word-reveal">Rotina de cuidado que protege e potencializa resultados</h2>
+  </div>
+</section>
+
+<!-- PROC CARD: BOOSTER VIT C -->
+<section class="proc cat--light2" style="padding-top:0;">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-c6931521c1b3.jpg" alt="Booster Vitamina C — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 04</span>
+        <h3>Booster Vitamina C</h3>
+        <p>Ativo poderoso para a saúde e a beleza da pele. Atua na redução de rugas e no aumento da firmeza, prevenindo o envelhecimento precoce. Sua ação inibidora de melanina também auxilia no tratamento de manchas e da hiperpigmentação.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Ativo</span><span class="v">Vitamina C</span></div>
+          <div class="proc-fact"><span class="l">Benefícios</span><span class="v">Redução de manchas</span></div>
+          <div class="proc-fact"><span class="l">Ação</span><span class="v">Aumenta a firmeza da pele</span></div>
+          <div class="proc-fact"><span class="l">Volume</span><span class="v">30g</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 160,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Booster%20Vitamina%20C." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: CLEAR SOFT -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card proc-card--rev reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-334baf5c8e42.jpg" alt="Clear Soft — Espuma de Limpeza Facial">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 05</span>
+        <h3>Clear Soft — Espuma de Limpeza Facial</h3>
+        <p>Espuma limpadora facial de toque suave, formulada para todos os tipos de pele. Remove impurezas e resíduos de maquiagem sem ressecar, preparando a pele para as próximas etapas da rotina de skincare.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Tipo</span><span class="v">Espuma de limpeza facial</span></div>
+          <div class="proc-fact"><span class="l">Indicado para</span><span class="v">Todos os tipos de pele</span></div>
+          <div class="proc-fact"><span class="l">Uso</span><span class="v">Manhã e noite</span></div>
+          <div class="proc-fact"><span class="l">Volume</span><span class="v">100ml</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 129,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Clear%20Soft." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: BLUR SHADE FPS 75 -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-87b469d1b8ab.webp" alt="Protetor Solar Blur Shade FPS 75 — Samana">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 06</span>
+        <h3>Protetor Solar Blur Shade FPS 75</h3>
+        <p>Protetor solar antioxidante com toque seco e efeito mate, que reduz a aparência de poros dilatados. Alta cobertura para disfarçar linhas e hipercromias, com ação antipoluição, hidratação e toque aveludado — não comedogênico.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Proteção</span><span class="v">FPS 75 · PPD 30</span></div>
+          <div class="proc-fact"><span class="l">Efeito</span><span class="v">Toque seco / Matte</span></div>
+          <div class="proc-fact"><span class="l">Duração</span><span class="v">Até 16h · resistente à água</span></div>
+          <div class="proc-fact"><span class="l">Volume</span><span class="v">50g</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 190,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Protetor%20Solar%20Blur%20Shade%20FPS%2075." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: OZONE DERMIC FPS 70 -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card proc-card--rev reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-4e726cb0d4e7.jpg" alt="Pó Compacto Ozonizado Ozone Dermic FPS 70 — Samana">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 07</span>
+        <h3>Pó Compacto Ozonizado Ozone Dermic FPS 70</h3>
+        <p>Pó compacto com filtros solares 100% minerais, alta cobertura, efeito mate e impermeável. Reduz a aparência de poros dilatados e é livre de conservantes, filtro químico e fragrância — com óleos ozonizados de girassol e oliva, óleo de rosa mosqueta e ácido hialurônico.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Proteção</span><span class="v">FPS 70 · PPD 25</span></div>
+          <div class="proc-fact"><span class="l">Filtros</span><span class="v">100% minerais</span></div>
+          <div class="proc-fact"><span class="l">Cobertura</span><span class="v">Alta, efeito mate</span></div>
+          <div class="proc-fact"><span class="l">Volume</span><span class="v">12g</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 160,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20P%C3%B3%20Compacto%20Ozone%20Dermic%20FPS%2070." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: DD BLUR FPS 90 -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-f07d27995b11.jpg" alt="Protetor Tonalizante em Bastão DD Blur FPS 90 — Samana">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 08</span>
+        <h3>Protetor Tonalizante em Bastão DD Blur FPS 90</h3>
+        <p>Produto multifuncional: tonalizante em bastão com proteção solar FPS 90, que reduz os poros, controla a oleosidade e tem ação antipoluição. Proporciona alta cobertura das imperfeições para um efeito "pele perfeita", com toque seco e proteção por até 16 horas.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Proteção</span><span class="v">FPS 90 · PPD 30</span></div>
+          <div class="proc-fact"><span class="l">Duração</span><span class="v">Até 16 horas</span></div>
+          <div class="proc-fact"><span class="l">Ativos</span><span class="v">Vit. E, Frações de Enantia, Carcinina</span></div>
+          <div class="proc-fact"><span class="l">Cores</span><span class="v">Natural, Beige, Bronze</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 129,90</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Protetor%20Tonalizante%20DD%20Blur%20FPS%2090." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="sect-transition reveal"></div>
+<!-- SKINCARE AVANCADO INTRO -->
+<section class="cat cat--dark section" id="cat-skincare" style="padding:90px 0 40px;">
+  <div class="wrap cat__head">
+    <span class="eyebrow reveal">Skincare Avançado</span>
+    <h2 class="reveal word-reveal">Ativos de alta performance para resultados visíveis</h2>
+  </div>
+</section>
+
+<!-- PROC CARD: SKINGLASS -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-1cdeb4b34d57.jpg" alt="Skinglass — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 09</span>
+        <h3>Skinglass</h3>
+        <p>Uniformiza, ilumina e revela a sua melhor versão de pele.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Ácido Tranexâmico</span><span class="v">Reduz manchas e hiperpigmentação</span></div>
+          <div class="proc-fact"><span class="l">Ácido Kójico</span><span class="v">Clareia manchas escuras</span></div>
+          <div class="proc-fact"><span class="l">Ácido Mandélico</span><span class="v">Renova a textura da pele</span></div>
+          <div class="proc-fact"><span class="l">Niacinamida PC</span><span class="v">Fortalece a barreira e reduz marcas</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 160,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Skinglass." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: SÉRUM PEPTÍDEOS -->
+<section class="proc cat--dark">
+  <div class="wrap">
+    <div class="proc-card proc-card--rev reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-4097c56ee4aa.jpg" alt="Sérum Peptídeos — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 10</span>
+        <h3>Sérum Peptídeos</h3>
+        <p>Pele mais firme, luminosa e jovem todos os dias.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Syn-Ake + Syn Coll</span><span class="v">Suaviza linhas de expressão</span></div>
+          <div class="proc-fact"><span class="l">PDRN</span><span class="v">Regenera e melhora a textura</span></div>
+          <div class="proc-fact"><span class="l">Matrixyl + GHK-Cu</span><span class="v">Estimula colágeno e firmeza</span></div>
+          <div class="proc-fact"><span class="l">IGF + EGF</span><span class="v">Fatores de crescimento e renovação</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 160,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20S%C3%A9rum%20Pept%C3%ADdeos." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: HYALURONIC GLOW -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-cb9c6fd6eb77.jpg" alt="Hyaluronic Glow — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 11</span>
+        <h3>Hyaluronic Glow</h3>
+        <p>Hidrata, rejuvenesce e devolve o glow natural da sua pele.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">16 tipos de Ác. Hialurônico</span><span class="v">Hidratação em camadas</span></div>
+          <div class="proc-fact"><span class="l">GHK-Cu</span><span class="v">Antioxidante e regenerador</span></div>
+          <div class="proc-fact"><span class="l">NMN</span><span class="v">Renovação celular e firmeza</span></div>
+          <div class="proc-fact"><span class="l">GlowCytocin</span><span class="v">Revitaliza e potencializa a luminosidade</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 160,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Hyaluronic%20Glow." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: LIP OIL REPAIR -->
+<section class="proc cat--dark">
+  <div class="wrap">
+    <div class="proc-card proc-card--rev reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-4d66aa3b8d6c.jpg" alt="Lip Oil Repair — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 12</span>
+        <h3>Lip Oil Repair</h3>
+        <p>Lábios mais hidratados, nutridos e radiantes.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Peptídeos</span><span class="v">Estimulam colágeno e dão volume</span></div>
+          <div class="proc-fact"><span class="l">Óleo de Framboesa</span><span class="v">Nutre e protege do ressecamento</span></div>
+          <div class="proc-fact"><span class="l">Hidratação</span><span class="v">Textura leve, não pegajosa</span></div>
+          <div class="proc-fact"><span class="l">Efeito</span><span class="v">Brilho natural e reparador</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 80,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Lip%20Oil%20Repair." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: RETINAL + RETINOL PRO LONGEVIDADE -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-8d7bcc9420ba.jpg" alt="Retinal + Retinol PRO LongEvidade — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 13</span>
+        <h3>Retinal + Retinol PRO LongEvidade</h3>
+        <p>Olhar mais jovem, iluminado e revitalizado todos os dias.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Exossomos + NMN</span><span class="v">Regeneração e vitalidade celular</span></div>
+          <div class="proc-fact"><span class="l">Retinal</span><span class="v">Ação antirrugas intensiva</span></div>
+          <div class="proc-fact"><span class="l">Retinol</span><span class="v">Suaviza linhas finas e uniformiza o tom</span></div>
+          <div class="proc-fact"><span class="l">Quercetina + Resveratrol</span><span class="v">Antioxidante e antienvelhecimento</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 170,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Retinal%20%2B%20Retinol%20PRO%20LongEvidade." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: ESPICULE SHOT -->
+<section class="proc cat--dark">
+  <div class="wrap">
+    <div class="proc-card proc-card--rev reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-467cb80cb99a.jpg" alt="Espicule Shot — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 14</span>
+        <h3>Espicule Shot</h3>
+        <p>Peptídeos bioestimuladores com tecnologia spicule que potencializa a renovação da pele.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Peptídeos Spicule Complex</span><span class="v">Microagulhas biotecnológicas</span></div>
+          <div class="proc-fact"><span class="l">Bioestimuladores</span><span class="v">Firmeza e elasticidade</span></div>
+          <div class="proc-fact"><span class="l">Renovação intensa</span><span class="v">Melhora textura e luminosidade</span></div>
+          <div class="proc-fact"><span class="l">Toque seco e leve</span><span class="v">Uso diário</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 160,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20o%20Espicule%20Shot." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROC CARD: ESPONJAS DE MAQUIAGEM -->
+<section class="proc cat--light2">
+  <div class="wrap">
+    <div class="proc-card reveal">
+      <div class="proc-card__media">
+        <div class="proc-single">
+          <img src="assets/img/img-75a1ae91571d.jpg" alt="Esponjas de Maquiagem — Dra. Flaviana Pellozo">
+        </div>
+      </div>
+      <div class="proc-card__body">
+        <span class="eyebrow">Produto 15</span>
+        <h3>Esponja de Maquiagem</h3>
+        <p>Esponja com acabamento aveludado, ideal para uma aplicação uniforme de bases e produtos tonalizantes.</p>
+        <div class="proc-facts">
+          <div class="proc-fact"><span class="l">Formato</span><span class="v">Duplo, ponta fina e base ampla</span></div>
+          <div class="proc-fact"><span class="l">Textura</span><span class="v">Aveludada e macia</span></div>
+          <div class="proc-fact"><span class="l">Uso</span><span class="v">Molhada ou seca</span></div>
+          <div class="proc-fact"><span class="l">Kit</span><span class="v">1 unidade</span></div>
+        </div>
+        <div class="proc-price">
+          <span class="proc-price__label">Investimento</span>
+          <span class="proc-price__value">R$ 45,00</span>
+        </div>
+        <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20comprar%20as%20Esponjas%20de%20Maquiagem." target="_blank" rel="noopener" class="btn btn-gold magnetic">Quero este produto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="deposit-note reveal" style="margin:0 auto 90px;">Todos os pedidos são combinados diretamente pelo WhatsApp. Pagamento via Pix (com desconto à vista) ou cartão, com entrega ou retirada em consultório a combinar.</div>
+
+<div class="sect-transition reveal"></div>
+<!-- FAQ -->
+<section class="faq section">
+  <div class="wrap">
+    <div class="cat__head">
+      <span class="eyebrow reveal">Dúvidas</span>
+      <h2 class="reveal">Antes de Comprar</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq__item reveal">
+        <button class="faq__q"><span>Como faço para comprar?</span><span class="icon"></span></button>
+        <div class="faq__a"><p>Todo o pedido é feito pelo WhatsApp: você escolhe o produto (e a cor ou sabor, quando houver), confirmamos disponibilidade e combinamos a forma de pagamento e entrega.</p></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q"><span>Quais as formas de pagamento?</span><span class="icon"></span></button>
+        <div class="faq__a"><p>Aceitamos Pix ou débito, ou cartão de crédito parcelado (com juros da maquininha): em 2x uma taxa de R$ 15,00, e em 3x uma taxa de R$ 30,00.</p></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q"><span>Os produtos combinam com procedimentos de harmonização?</span><span class="icon"></span></button>
+        <div class="faq__a"><p>Sim. Foram selecionados justamente para complementar e prolongar os resultados dos procedimentos — do skincare de manutenção diária à proteção solar essencial após qualquer tratamento facial.</p></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q"><span>Como funciona a entrega?</span><span class="icon"></span></button>
+        <div class="faq__a"><p>É possível retirar em consultório ou combinar entrega, conforme a sua localização. Todos os detalhes são acertados diretamente no WhatsApp.</p></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q"><span>Posso trocar um produto?</span><span class="icon"></span></button>
+        <div class="faq__a"><p>Produtos com embalagem violada não podem ser trocados por questões de segurança e higiene. Em caso de avaria de fábrica, entre em contato para avaliarmos o caso.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sect-transition reveal"></div>
+<!-- TESTIMONIALS -->
+<section class="testi section">
+  <div class="wrap">
+    <div class="cat__head">
+      <span class="eyebrow reveal">Depoimentos</span>
+      <h2 class="reveal">O Que Dizem as Clientes</h2>
+    </div>
+    <div class="testi__track">
+      <div class="testi__card reveal"><span class="testi__stars">★★★★★</span><p class="testi__quote">"O Gloss Dior FP virou item obrigatório na minha bolsa. Hidrata de verdade e o brilho dura o dia inteiro."</p><span class="testi__name">Camila R.</span></div>
+      <div class="testi__card reveal"><span class="testi__stars">★★★★★</span><p class="testi__quote">"Comecei a usar o Booster de Vitamina C recomendado pela Dra. Flaviana e já notei a pele mais firme e uniforme."</p><span class="testi__name">Juliana P.</span></div>
+      <div class="testi__card reveal"><span class="testi__stars">★★★★★</span><p class="testi__quote">"O protetor solar em bastão é prático, disfarça bem e não pesa. Uso todos os dias, principalmente depois dos procedimentos."</p><span class="testi__name">Beatriz A.</span></div>
+      <div class="testi__card reveal"><span class="testi__stars">★★★★★</span><p class="testi__quote">"O Gloss FP com efeito pump prolongou visivelmente a durabilidade do meu preenchimento labial. Recomendo muito!"</p><span class="testi__name">Renata S.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="sect-transition reveal"></div>
+<!-- FINAL CTA -->
+<section class="final" id="finalCta">
+  <img class="final__img" id="finalImg" src="assets/img/finalImg-ad89b4012e4b.webp" alt="Dra. Flaviana Pellozo">
+  <div class="final__overlay" id="finalOverlay"></div>
+  <div class="wrap final__content">
+    <span class="eyebrow reveal">Cuide-se Também em Casa</span>
+    <div class="final__divider reveal"></div>
+    <h2 class="reveal word-reveal">Os mesmos cuidados de consultório, todos os dias na sua rotina de beleza.</h2>
+    <div class="final__ctas reveal">
+      <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20produtos." target="_blank" rel="noopener" class="btn btn-gold">Fazer Pedido</a>
+      <a href="https://wa.me/5519971510185" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="smartfab" id="smartfab">
+  <div class="smartfab__card">
+    <h4>Pronta Para Cuidar de Você</h4>
+    <p>Escolha seus produtos e finalize o pedido em poucos minutos pelo WhatsApp.</p>
+    <div class="row">
+      <a href="https://wa.me/5519971510185?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20produtos." target="_blank" rel="noopener" class="btn btn-gold">Fazer Pedido</a>
+      <a href="https://wa.me/5519971510185" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo" role="img" aria-label="Dra. Flaviana Pellozo" style="width:150px;height:34px;-webkit-mask-image:url('assets/img/img-a0b9c88acfb0.webp');mask-image:url('assets/img/img-a0b9c88acfb0.webp');-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:left center;mask-position:left center;background-color:var(--c2);"></div>
+        <p>Produtos selecionados para os cuidados diários da sua pele, com a mesma técnica e sensibilidade de cada atendimento.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5519971510185" target="_blank" rel="noopener">WhatsApp +55 19 97151-0185</a>
+        <a href="https://www.instagram.com/dra.flavianapellozo" target="_blank" rel="noopener">@dra.flavianapellozo</a>
+      </div>
+      <div class="foot-col">
+        <h4>Consultório</h4>
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Benedito+Storani%2C+1425+-+Bl+02+Sala+201+-+Vinhedo+-+SP" target="_blank" rel="noopener">Av. Benedito Storani, 1425 — Bl. 02, Sala 201<br>Vinhedo, SP</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dra. Flaviana Pellozo. Todos os direitos reservados.</span>
+      <span>Beleza que Revela · Técnica · Individualidade</span>
+    </div>
+  </div>
+</footer>
+
+<div class="made-by">
+  <span>Feito por</span>
+  <div class="edhen-mark" role="img" aria-label="Studio Ēdhen" style="-webkit-mask-image:url('assets/img/img-9b8ad54f80e2.webp');mask-image:url('assets/img/img-9b8ad54f80e2.webp');"></div>
+  <span class="edhen-handle">@edhen.studiobrand</span>
+</div>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+try{
+  const lenis = new Lenis({duration:1.15,smoothWheel:true});
+  window.lenis = lenis;
+  function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add((t)=>{lenis.raf(t*1000);});
+  gsap.ticker.lagSmoothing(0);
+}catch(e){}
+
+const cur=document.getElementById('cur'),curR=document.getElementById('cur-r');
+window.addEventListener('mousemove',(e)=>{
+  gsap.to(cur,{x:e.clientX,y:e.clientY,duration:.05});
+  gsap.to(curR,{x:e.clientX,y:e.clientY,duration:.25});
+});
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>gsap.to(curR,{width:60,height:60,opacity:.3}));
+  el.addEventListener('mouseleave',()=>gsap.to(curR,{width:34,height:34,opacity:.5}));
+});
+
+const nav=document.getElementById('nav');
+ScrollTrigger.create({start:80,end:99999,onUpdate:(self)=>{nav.classList.toggle('s',self.scroll()>80);}});
+
+/* phero reveal: photo + gradient merge, then text */
+gsap.timeline({defaults:{ease:'power3.out'}})
+  .fromTo('#pheroImg',{scale:1.16},{scale:1,duration:2.6,ease:'power2.out'},0)
+  .to('#pheroOverlay',{opacity:1,duration:1.8},.1)
+  .to('#pheroEyebrow',{opacity:1,duration:.9},.9)
+  .to('#pheroTitle',{opacity:1,duration:1},1.1)
+  .to('#pheroSub',{opacity:1,duration:1},1.35)
+  .to('#pheroLogo',{opacity:1,duration:1},1.6);
+
+gsap.utils.toArray('.reveal').forEach((el)=>{
+  gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+});
+
+document.querySelectorAll('.faq__item').forEach(item=>{
+  const q=item.querySelector('.faq__q'),a=item.querySelector('.faq__a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq__item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq__a').style.maxHeight=null;});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+
+/* magnetic buttons + ripple */
+document.querySelectorAll('.magnetic').forEach((btn)=>{
+  btn.addEventListener('mousemove',(e)=>{
+    const r=btn.getBoundingClientRect();
+    const x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2;
+    gsap.to(btn,{x:x*0.18,y:y*0.35,duration:.4,ease:'power2.out'});
+  });
+  btn.addEventListener('mouseleave',()=>gsap.to(btn,{x:0,y:0,duration:.5,ease:'elastic.out(1,0.4)'}));
+  btn.addEventListener('click',function(e){
+    const r=this.getBoundingClientRect();
+    const rip=document.createElement('span');
+    rip.className='ripple';
+    const size=Math.max(r.width,r.height);
+    rip.style.width=rip.style.height=size+'px';
+    rip.style.left=(e.clientX-r.left-size/2)+'px';
+    rip.style.top=(e.clientY-r.top-size/2)+'px';
+    this.appendChild(rip);
+    setTimeout(()=>rip.remove(),650);
+  });
+});
+
+/* word-by-word heading reveal */
+document.querySelectorAll('.word-reveal').forEach((h)=>{
+  const words=h.textContent.trim().split(' ');
+  h.innerHTML=words.map(w=>`<span class="wd">${w}</span>`).join(' ');
+  gsap.to(h.querySelectorAll('.wd'),{
+    opacity:1,y:0,duration:.7,stagger:.06,ease:'power3.out',
+    scrollTrigger:{trigger:h,start:'top 88%'}
+  });
+});
+
+/* parallax on product media */
+document.querySelectorAll('.proc-card__media').forEach((el)=>{
+  gsap.to(el,{yPercent:-6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+});
+
+/* final CTA photo reveal */
+gsap.fromTo('#finalImg',{scale:1.15},{scale:1,duration:1.8,ease:'power2.out',scrollTrigger:{trigger:'#finalCta',start:'top 85%'}});
+gsap.to('#finalOverlay',{opacity:1,duration:1.5,scrollTrigger:{trigger:'#finalCta',start:'top 80%'}});
+
+/* shimmer dividers between sections */
+gsap.utils.toArray('.sect-transition').forEach((el)=>{
+  gsap.to(el,{opacity:1,scaleX:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}});
+});
+
+/* smart whatsapp card: plain JS, no dependency on GSAP/ScrollTrigger */
+(function(){
+  var fab = document.getElementById('smartfab');
+  var faqEl = document.querySelector('.faq');
+  var stopEl = document.querySelector('.made-by');
+  if(!fab || !faqEl || !stopEl) return;
+  var margin = 38; /* ~1cm gap above "Feito por" / Edhen logo */
+  function update(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var winH = window.innerHeight;
+    var faqTop = faqEl.getBoundingClientRect().top + scrollY;
+    var stopTop = stopEl.getBoundingClientRect().top + scrollY;
+    var fabH = fab.offsetHeight || 160;
+    var showPoint = faqTop - winH * 0.35;
+    var stopAt = stopTop - fabH - margin;
+
+    if(scrollY < showPoint){
+      fab.classList.remove('is-visible');
+      fab.classList.remove('is-stopped');
+      fab.style.top = '';
+      return;
+    }
+    fab.classList.add('is-visible');
+
+    var fixedTopDoc = scrollY + winH - fabH - 26;
+    if(fixedTopDoc >= stopAt){
+      fab.classList.add('is-stopped');
+      fab.style.top = stopAt + 'px';
+    } else {
+      fab.classList.remove('is-stopped');
+      fab.style.top = '';
+    }
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+})();
+
+/* ===== ENVELOPE GATE: abertura com zoom + luz ===== */
+(function(){
+  var gate = document.getElementById('envelopeGate');
+  var img = document.getElementById('envelopeImg');
+  var flash = gate ? gate.querySelector('.envelope-flash') : null;
+  if(!gate || !img) return;
+  var opened = false;
+
+  function unlockPage(){
+    gate.classList.add('is-hidden');
+    document.body.classList.remove('gate-locked');
+    if(window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+
+  function openGate(){
+    if(opened) return;
+    opened = true;
+
+    if(window.gsap){
+      var tl = gsap.timeline({onComplete: unlockPage});
+      tl.to(img, {scale:1.22, duration:1.2, ease:'power2.inOut'})
+        .to(flash, {opacity:1, duration:.55, ease:'power1.in'}, '-=.4')
+        .to(gate, {opacity:0, duration:.9, ease:'power2.out'}, '-=.05');
+    } else {
+      /* fallback sem GSAP */
+      img.style.transition = 'transform 1.1s ease';
+      img.style.transform = 'scale(1.22)';
+      if(flash){
+        flash.style.transition = 'opacity .5s ease';
+        flash.style.opacity = '1';
+      }
+      setTimeout(function(){
+        gate.style.transition = 'opacity .9s ease';
+        gate.style.opacity = '0';
+        setTimeout(unlockPage, 900);
+      }, 550);
+    }
+  }
+
+  gate.addEventListener('click', openGate);
+  gate.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGate(); }
+  });
+})();
+
+/* ===== CATEGORY DOCK: botões de scroll que separam as categorias ===== */
+(function(){
+  var dock = document.getElementById('catDock');
+  if(!dock) return;
+  var btns = Array.prototype.slice.call(dock.querySelectorAll('.catdock__btn'));
+  var sections = btns.map(function(btn){
+    return document.getElementById(btn.getAttribute('data-cat'));
+  }).filter(Boolean);
+  if(!sections.length) return;
+
+  function setActive(id){
+    btns.forEach(function(btn){
+      btn.classList.toggle('is-active', btn.getAttribute('data-cat') === id);
+    });
+  }
+
+  function update(){
+    var vh = window.innerHeight;
+    var showFrom = sections[0].getBoundingClientRect().top + window.pageYOffset - vh * .6;
+    var lastSection = sections[sections.length - 1];
+    var hideAfter = lastSection.getBoundingClientRect().bottom + window.pageYOffset;
+    var y = window.pageYOffset;
+
+    dock.classList.toggle('is-visible', y > showFrom && y < hideAfter);
+
+    var current = sections[0];
+    sections.forEach(function(sec){
+      if(sec.getBoundingClientRect().top - vh * .5 <= 0){ current = sec; }
+    });
+    setActive(current.id);
+  }
+
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.getElementById(btn.getAttribute('data-cat'));
+      if(!target) return;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - 90;
+      if(window.lenis){ window.lenis.scrollTo(top); }
+      else { window.scrollTo({top: top, behavior:'smooth'}); }
+    });
+  });
+
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+})();
+</script>
+</body>
+</html>
